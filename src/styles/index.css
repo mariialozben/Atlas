@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@import "./fonts.css";
+@import "./theme.css";
+
+@media print {
+  body > * {
+    display: none;
+  }
+}
