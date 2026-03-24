@@ -24,27 +24,27 @@ export default function CardsDemo() {
               <Badge variant="secondary">+12%</Badge>
             </div>
             <p className="text-3xl font-semibold text-white">2,847</p>
-            <p className="text-sm mt-1" style={{ color: 'var(--gray-400)' }}>Total components</p>
+            <p className="text-sm mt-1" style={{ color: 'var(--text-muted)' }}>Total components</p>
           </CardContent>
         </Card>
 
         <Card data-el="components-card-compact" className="p-3">
           <CardContent className="p-0">
             <p className="text-xs font-medium text-white">Compact card</p>
-            <p className="text-xs" style={{ color: 'var(--gray-400)' }}>Dense padding, reduced sizes.</p>
+            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>Dense padding, reduced sizes.</p>
           </CardContent>
         </Card>
 
         <Card data-el="components-card-media">
           <div
             className="h-24 rounded-t-lg border-b border-white/10 flex items-center justify-center"
-            style={{ backgroundColor: 'var(--blue-900)' }}
+            style={{ backgroundColor: 'var(--bg-elevated)' }}
           >
             <span style={{ color: 'var(--blue-300)', fontSize: '2rem' }}>◈</span>
           </div>
           <CardContent className="pt-4">
             <p className="text-sm font-medium text-white">Media card</p>
-            <p className="text-xs" style={{ color: 'var(--gray-400)' }}>Image or banner at top.</p>
+            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>Image or banner at top.</p>
           </CardContent>
         </Card>
       </div>

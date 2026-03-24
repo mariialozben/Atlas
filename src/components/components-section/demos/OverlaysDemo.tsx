@@ -11,7 +11,7 @@ export default function OverlaysDemo() {
       <h3 className="text-sm font-medium text-white">Overlays</h3>
 
       <div className="space-y-2">
-        <p className="text-xs" style={{ color: 'var(--gray-400)' }}>Tooltip (hover)</p>
+        <p className="text-xs" style={{ color: 'var(--text-muted)' }}>Tooltip (hover)</p>
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -25,7 +25,7 @@ export default function OverlaysDemo() {
       </div>
 
       <div className="space-y-2">
-        <p className="text-xs" style={{ color: 'var(--gray-400)' }}>Dialog / Modal</p>
+        <p className="text-xs" style={{ color: 'var(--text-muted)' }}>Dialog / Modal</p>
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
             <Button variant="secondary" size="sm">Open dialog</Button>
@@ -34,7 +34,7 @@ export default function OverlaysDemo() {
             <DialogHeader>
               <DialogTitle>Atlas dialog</DialogTitle>
             </DialogHeader>
-            <p className="text-sm" style={{ color: 'var(--gray-400)' }}>
+            <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
               Modal content with fade + scale animation. Press Escape or click outside to dismiss.
             </p>
             <DialogFooter>

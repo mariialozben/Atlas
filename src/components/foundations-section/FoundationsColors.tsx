@@ -1,25 +1,22 @@
 const COLORS = [
-  { group: 'Blue palette', items: [
-    { name: '--blue-50', hex: '#E8F4FE', purpose: 'Hover backgrounds, focus tints' },
-    { name: '--blue-300', hex: '#60A8E8', purpose: 'Decorative, inactive, secondary UI' },
-    { name: '--blue-500', hex: '#2E7DD6', purpose: 'Primary actions, CTAs, brand accent' },
-    { name: '--blue-700', hex: '#1A4F8A', purpose: 'Pressed states, strong borders' },
-    { name: '--blue-900', hex: '#0B2647', purpose: 'Deep accents, elevated dark surfaces' },
+  { group: 'Atlas Neutrals', items: [
+    { name: '--color-jet-black', hex: '#1A1A1A', purpose: 'Page background (dark)' },
+    { name: '--color-onyx',      hex: '#222526', purpose: 'Surface background' },
+    { name: '--color-graphite',  hex: '#353A3E', purpose: 'Elevated surface, nav background' },
+    { name: '--color-ash',       hex: '#BFBFBF', purpose: 'Highlights, hover states, dividers' },
+    { name: '--color-platinum',  hex: '#E0E0E0', purpose: 'Primary text, logo, headings' },
   ]},
-  { group: 'Neutral palette', items: [
-    { name: '--gray-50', hex: '#F5F5F4', purpose: 'Light mode page background' },
-    { name: '--gray-100', hex: '#E8E7E3', purpose: 'Dividers, subtle borders' },
-    { name: '--gray-400', hex: '#888780', purpose: 'Muted text, placeholders' },
-    { name: '--gray-700', hex: '#444441', purpose: 'Body text (dark mode)' },
-    { name: '--gray-900', hex: '#1A1A18', purpose: 'Primary dark background' },
+  { group: 'Accent Colors', items: [
+    { name: '--blue-500', hex: '#2E7DD6', purpose: 'Primary actions, CTAs, links' },
+    { name: '--blue-300', hex: '#60A8E8', purpose: 'Secondary, inactive states' },
+    { name: '--blue-50',  hex: '#E8F4FE', purpose: 'Focus tint, hover background on light' },
   ]},
 ]
 
 const SEMANTIC = [
-  { name: '--color-success', hex: '#1D9E75', label: 'Success' },
-  { name: '--color-warning', hex: '#EF9F27', label: 'Warning' },
-  { name: '--color-danger', hex: '#E24B4A', label: 'Danger' },
-  { name: '--color-info', hex: '#2E7DD6', label: 'Info' },
+  { name: '--color-success', hex: '#22c55e', label: 'Success' },
+  { name: '--color-warning', hex: '#f59e0b', label: 'Warning' },
+  { name: '--color-danger',  hex: '#ef4444', label: 'Danger' },
 ]
 
 export default function FoundationsColors() {
@@ -36,7 +33,7 @@ export default function FoundationsColors() {
                   style={{ backgroundColor: hex }}
                   title={purpose}
                 />
-                <span className="text-xs font-mono text-center" style={{ color: 'var(--gray-400)', fontSize: '10px' }}>
+                <span className="text-xs font-mono text-center" style={{ color: 'var(--text-muted)', fontSize: '10px' }}>
                   {name.replace('--', '')}
                 </span>
               </div>
@@ -51,7 +48,7 @@ export default function FoundationsColors() {
             <div key={name} className="flex items-center gap-2">
               <div className="w-5 h-5 rounded-full" style={{ backgroundColor: hex }} />
               <span className="text-xs text-white">{label}</span>
-              <span className="text-xs font-mono" style={{ color: 'var(--gray-400)' }}>{hex}</span>
+              <span className="text-xs font-mono" style={{ color: 'var(--text-muted)' }}>{hex}</span>
             </div>
           ))}
         </div>

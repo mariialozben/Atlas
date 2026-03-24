@@ -1,4 +1,3 @@
-import AtlasHeader from '@/components/atlas-header/AtlasHeader'
 import AtlasHomeHero from './AtlasHomeHero'
 import AtlasHomeBackground from './AtlasHomeBackground'
 import { useLocale } from '@/hooks/use-locale'
@@ -9,13 +8,11 @@ export default function AtlasHome() {
   return (
     <div
       data-el="home"
-      className="relative min-h-[100dvh] flex flex-col"
-      style={{ backgroundColor: 'var(--gray-900)' }}
+      className="relative flex flex-col min-h-[calc(100dvh-56px)]"
     >
       <AtlasHomeBackground />
-      <AtlasHeader variant="transparent" />
 
-      <main className="flex-1 flex items-center justify-center px-6 pt-14">
+      <main className="flex-1 flex items-center justify-center px-6">
         <AtlasHomeHero />
       </main>
 
@@ -23,7 +20,7 @@ export default function AtlasHome() {
         <span
           data-el="home-version"
           className="text-xs"
-          style={{ color: 'var(--gray-400)' }}
+          style={{ color: 'var(--text-muted)' }}
         >
           {t('common.version')}
         </span>

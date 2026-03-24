@@ -3,7 +3,7 @@ import { STATS } from '../data/dashboard.data'
 
 export default function DashboardTemplate() {
   return (
-    <div data-el="template-dashboard" className="overflow-y-auto h-[500px] rounded-lg border border-white/10" style={{ backgroundColor: 'var(--gray-900)' }}>
+    <div data-el="template-dashboard" className="overflow-y-auto h-[500px] rounded-lg border border-white/10" style={{ backgroundColor: 'var(--bg-page)' }}>
       <header className="px-6 py-4 border-b border-white/10">
         <h2 className="text-sm font-medium text-white">Dashboard</h2>
       </header>
@@ -15,7 +15,7 @@ export default function DashboardTemplate() {
               <CardContent className="pt-4 pb-4">
                 <div className="text-xl mb-1" style={{ color: 'var(--blue-500)' }}>{icon}</div>
                 <p className="text-2xl font-semibold text-white">{value}</p>
-                <p className="text-xs" style={{ color: 'var(--gray-400)' }}>{label}</p>
+                <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{label}</p>
               </CardContent>
             </Card>
           ))}
@@ -28,7 +28,7 @@ export default function DashboardTemplate() {
               {['Token updated', 'Component added', 'Locale synced'].map((item) => (
                 <div key={item} className="flex items-center gap-2 py-1.5 border-b border-white/5 last:border-0">
                   <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: 'var(--blue-500)' }} />
-                  <span className="text-xs" style={{ color: 'var(--gray-400)' }}>{item}</span>
+                  <span className="text-xs" style={{ color: 'var(--text-muted)' }}>{item}</span>
                 </div>
               ))}
             </CardContent>

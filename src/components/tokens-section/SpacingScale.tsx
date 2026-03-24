@@ -8,8 +8,8 @@ export default function SpacingScale() {
         <div className="space-y-2">
           {SPACING_SCALE.map(({ token, px }) => (
             <div key={token} className="flex items-center gap-4">
-              <span className="w-24 text-xs font-mono flex-shrink-0" style={{ color: 'var(--gray-400)' }}>{token}</span>
-              <span className="w-10 text-xs font-mono flex-shrink-0" style={{ color: 'var(--gray-700)' }}>{px}px</span>
+              <span className="w-24 text-xs font-mono flex-shrink-0" style={{ color: 'var(--text-muted)' }}>{token}</span>
+              <span className="w-10 text-xs font-mono flex-shrink-0" style={{ color: 'var(--text-muted)' }}>{px}px</span>
               <div
                 className="h-4 rounded-sm flex-shrink-0"
                 style={{ width: px, backgroundColor: 'var(--blue-500)', opacity: 0.7 }}
@@ -26,10 +26,10 @@ export default function SpacingScale() {
             <div key={token} className="flex flex-col items-center gap-2">
               <div
                 className="w-12 h-12 border border-white/20"
-                style={{ borderRadius: value, backgroundColor: 'var(--gray-700)' }}
+                style={{ borderRadius: value, backgroundColor: 'var(--bg-elevated)' }}
               />
               <span className="text-xs font-mono text-white">{label}</span>
-              <span className="text-xs font-mono" style={{ color: 'var(--gray-400)', fontSize: '10px' }}>{value}</span>
+              <span className="text-xs font-mono" style={{ color: 'var(--text-muted)', fontSize: '10px' }}>{value}</span>
             </div>
           ))}
         </div>
@@ -43,12 +43,12 @@ export default function SpacingScale() {
               <div
                 className="w-20 h-12 rounded-lg"
                 style={{
-                  backgroundColor: 'var(--gray-700)',
+                  backgroundColor: 'var(--bg-elevated)',
                   boxShadow: `var(${token})`,
                 }}
               />
               <span className="text-xs font-mono text-white">{label}</span>
-              <span className="text-xs font-mono" style={{ color: 'var(--gray-400)', fontSize: '10px' }}>{token}</span>
+              <span className="text-xs font-mono" style={{ color: 'var(--text-muted)', fontSize: '10px' }}>{token}</span>
             </div>
           ))}
         </div>

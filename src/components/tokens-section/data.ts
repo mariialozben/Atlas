@@ -1,18 +1,16 @@
-export const BLUE_PALETTE = [
-  { name: '--blue-50', hex: '#E8F4FE', purpose: 'Hover backgrounds, focus tints' },
-  { name: '--blue-300', hex: '#60A8E8', purpose: 'Decorative, inactive, secondary UI' },
-  { name: '--blue-500', hex: '#2E7DD6', purpose: 'Primary actions, CTAs, brand accent' },
-  { name: '--blue-700', hex: '#1A4F8A', purpose: 'Pressed states, strong borders' },
-  { name: '--blue-900', hex: '#0B2647', purpose: 'Deep accents, elevated dark surfaces' },
-] as const
+export const ATLAS_NAMED_PALETTE = [
+  { name: '--color-jet-black', hex: '#1A1A1A', purpose: 'Page background (dark)' },
+  { name: '--color-onyx',      hex: '#222526', purpose: 'Surface background' },
+  { name: '--color-graphite',  hex: '#353A3E', purpose: 'Elevated surface, nav background' },
+  { name: '--color-ash',       hex: '#BFBFBF', purpose: 'Highlights, hover states, dividers' },
+  { name: '--color-platinum',  hex: '#E0E0E0', purpose: 'Primary text, logo, headings' },
+]
 
-export const GRAY_PALETTE = [
-  { name: '--gray-50', hex: '#F5F5F4', purpose: 'Light mode page background' },
-  { name: '--gray-100', hex: '#E8E7E3', purpose: 'Dividers, subtle borders' },
-  { name: '--gray-400', hex: '#888780', purpose: 'Muted text, placeholders, taglines' },
-  { name: '--gray-700', hex: '#444441', purpose: 'Body text (dark mode)' },
-  { name: '--gray-900', hex: '#1A1A18', purpose: 'Primary dark background' },
-] as const
+export const ACCENT_PALETTE = [
+  { name: '--blue-500', hex: '#2E7DD6', purpose: 'Primary actions, CTAs, links' },
+  { name: '--blue-300', hex: '#60A8E8', purpose: 'Secondary, inactive states' },
+  { name: '--blue-50',  hex: '#E8F4FE', purpose: 'Focus tint, hover background on light' },
+]
 
 export const SEMANTIC_COLORS = [
   { name: '--color-success', hex: '#1D9E75', label: 'Success', purpose: 'Confirmations, online, saved' },

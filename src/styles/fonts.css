@@ -1,21 +1,5 @@
-@font-face {
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("@/assets/fonts/InterVariable.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: Inter;
-  font-style: italic;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("@/assets/fonts/InterVariable-Italic.woff2") format("woff2");
-}
-
 :root {
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: "Merriweather", Georgia, serif;
   line-height: 1.5;
   font-weight: 400;
   font-optical-sizing: auto;

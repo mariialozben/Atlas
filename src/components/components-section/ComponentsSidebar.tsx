@@ -21,8 +21,8 @@ export default function ComponentsSidebar({ activeSection, onSelect }: Component
                 : 'hover:text-white'
             )}
             style={{
-              backgroundColor: activeSection === id ? 'var(--blue-900)' : 'transparent',
-              color: activeSection === id ? 'white' : 'var(--gray-400)',
+              backgroundColor: activeSection === id ? 'var(--bg-elevated)' : 'transparent',
+              color: activeSection === id ? 'white' : 'var(--text-muted)',
               borderLeft: activeSection === id ? '2px solid var(--blue-500)' : '2px solid transparent',
             }}
           >

@@ -10,30 +10,42 @@ const TYPE_SPECIMENS = [
 ]
 
 const RULES = [
-  'Use Inter for all UI text — covers Latin + Cyrillic (Ukrainian)',
+  'Headings use Lato Bold 700 — covers Latin + Cyrillic (Ukrainian)',
+  'Body copy uses Merriweather for long-form readability',
+  'UI elements (buttons, labels, nav) use Lato — clean and neutral',
+  'Code and tokens use JetBrains Mono',
   'Never use font sizes below 12px',
   'Sentence case always — no ALL CAPS in UI',
   'Two weights only in components: 400 regular, 500 medium (600 reserved for headings)',
 ]
 
+const isHeadingWeight = (weight: number) => weight >= 600
+
 export default function FoundationsTypography() {
   return (
     <div data-el="foundations-typography" className="space-y-8">
       <section>
-        <h3 className="text-sm font-medium text-white mb-4">Type scale — Inter</h3>
+        <h3 className="text-sm font-medium text-white mb-4">Type scale — Lato / Merriweather</h3>
         <div className="space-y-1">
           {TYPE_SPECIMENS.map(({ label, size, weight, use }) => (
             <div key={label} className="flex items-baseline gap-4 py-2 border-b border-white/5 last:border-0">
-              <span className="w-16 text-xs font-mono flex-shrink-0" style={{ color: 'var(--gray-400)' }}>
+              <span className="w-16 text-xs font-mono flex-shrink-0" style={{ color: 'var(--text-muted)' }}>
                 --text-{label}
               </span>
               <span
                 className="flex-1 text-white truncate"
-                style={{ fontSize: size, fontWeight: weight, lineHeight: 1.2 }}
+                style={{
+                  fontSize: size,
+                  fontWeight: weight,
+                  lineHeight: 1.2,
+                  fontFamily: isHeadingWeight(weight)
+                    ? '"Lato", sans-serif'
+                    : '"Merriweather", serif',
+                }}
               >
-                Atlas
+                {isHeadingWeight(weight) ? 'Lato Bold' : 'Merriweather'}
               </span>
-              <span className="text-xs flex-shrink-0 hidden sm:block" style={{ color: 'var(--gray-400)' }}>
+              <span className="text-xs flex-shrink-0 hidden sm:block" style={{ color: 'var(--text-muted)' }}>
                 {use}
               </span>
             </div>
@@ -44,7 +56,7 @@ export default function FoundationsTypography() {
         <h3 className="text-sm font-medium text-white mb-3">Typography rules</h3>
         <ul className="space-y-2">
           {RULES.map((rule, i) => (
-            <li key={i} className="flex gap-2 text-sm" style={{ color: 'var(--gray-400)' }}>
+            <li key={i} className="flex gap-2 text-sm" style={{ color: 'var(--text-muted)' }}>
               <span style={{ color: 'var(--blue-500)' }}>—</span>
               {rule}
             </li>

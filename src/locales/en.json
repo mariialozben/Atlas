@@ -1,14 +1,34 @@
 {
   "nav": {
-    "home": "Home",
+    "home": "Main",
     "foundations": "Foundations",
     "components": "Components",
     "layouts": "Layouts",
-    "tokens": "Tokens"
+    "tokens": "Tokens",
+    "comp": {
+      "button": "Button",
+      "card": "Card",
+      "chips": "Chips & Tags",
+      "dataTable": "Data Table",
+      "form": "Form",
+      "header": "Header",
+      "footer": "Footer",
+      "navigation": "Navigation Panel",
+      "progressBar": "Progress Bar",
+      "spinner": "Spinner",
+      "richText": "Rich Text Editor",
+      "segmentControl": "Segment Control",
+      "slider": "Slider",
+      "tooltip": "Tooltip",
+      "uploadArea": "Upload Area",
+      "userProfile": "User Profile",
+      "wizard": "Wizard"
+    }
   },
   "home": {
-    "tagline": "One system, endless projects.",
-    "cta": "Explore the system →"
+    "tagline": "Design System",
+    "tagline_full": "A minimalist, dark-first design system built for speed and clarity. Consistent tokens, composable components, bilingual by default.",
+    "cta": "Explore Components"
   },
   "actions": {
     "close": "Close",
@@ -16,6 +36,18 @@
     "confirm": "Confirm"
   },
   "common": {
-    "version": "v1.0.0"
+    "version": "v1.1.0"
+  },
+  "upload": {
+    "drag": "Drag & drop files here",
+    "or": "or",
+    "browse": "Browse files",
+    "hint": "Supports any file type"
+  },
+  "wizard": {
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish",
+    "step": "Step"
   }
 }

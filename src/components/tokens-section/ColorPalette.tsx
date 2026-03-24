@@ -1,4 +1,4 @@
-import { BLUE_PALETTE, GRAY_PALETTE, SEMANTIC_COLORS } from './data'
+import { ATLAS_NAMED_PALETTE, ACCENT_PALETTE, SEMANTIC_COLORS } from './data'
 
 function Swatch({ name, hex, purpose }: { name: string; hex: string; purpose: string }) {
   return (
@@ -9,8 +9,8 @@ function Swatch({ name, hex, purpose }: { name: string; hex: string; purpose: st
       />
       <div className="min-w-0">
         <p className="text-xs font-mono text-white">{name}</p>
-        <p className="text-xs font-mono" style={{ color: 'var(--gray-400)' }}>{hex}</p>
-        <p className="text-xs" style={{ color: 'var(--gray-400)', fontSize: '11px' }}>{purpose}</p>
+        <p className="text-xs font-mono" style={{ color: 'var(--text-muted)' }}>{hex}</p>
+        <p className="text-xs" style={{ color: 'var(--text-muted)', fontSize: '11px' }}>{purpose}</p>
       </div>
     </div>
   )
@@ -19,16 +19,16 @@ function Swatch({ name, hex, purpose }: { name: string; hex: string; purpose: st
 export default function ColorPalette() {
   return (
     <div data-el="tokens-colors" className="space-y-8">
-      <section data-el="tokens-colors-blue">
-        <h3 className="text-sm font-medium text-white mb-3">Blue palette — primary</h3>
+      <section data-el="tokens-colors-neutrals">
+        <h3 className="text-sm font-medium text-white mb-3">Atlas neutrals</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6">
-          {BLUE_PALETTE.map((c) => <Swatch key={c.name} {...c} />)}
+          {ATLAS_NAMED_PALETTE.map((c) => <Swatch key={c.name} {...c} />)}
         </div>
       </section>
-      <section data-el="tokens-colors-gray">
-        <h3 className="text-sm font-medium text-white mb-3">Neutral palette</h3>
+      <section data-el="tokens-colors-accent">
+        <h3 className="text-sm font-medium text-white mb-3">Accent palette — blue</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6">
-          {GRAY_PALETTE.map((c) => <Swatch key={c.name} {...c} />)}
+          {ACCENT_PALETTE.map((c) => <Swatch key={c.name} {...c} />)}
         </div>
       </section>
       <section data-el="tokens-colors-semantic">

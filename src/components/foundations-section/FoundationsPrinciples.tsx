@@ -14,11 +14,11 @@ export default function FoundationsPrinciples() {
         <div
           key={title}
           className="p-5 rounded-lg border border-white/10"
-          style={{ backgroundColor: 'var(--gray-700)' }}
+          style={{ backgroundColor: 'var(--bg-elevated)' }}
         >
           <div className="text-2xl mb-3" style={{ color: 'var(--blue-500)' }}>{icon}</div>
           <h3 className="text-sm font-medium text-white mb-1">{title}</h3>
-          <p className="text-xs leading-relaxed" style={{ color: 'var(--gray-400)' }}>{desc}</p>
+          <p className="text-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>{desc}</p>
         </div>
       ))}
     </div>

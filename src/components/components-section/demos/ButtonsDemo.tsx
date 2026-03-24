@@ -15,7 +15,7 @@ export default function ButtonsDemo() {
       <h3 className="text-sm font-medium text-white">Buttons</h3>
       {VARIANTS.map((variant) => (
         <div key={variant}>
-          <p className="text-xs mb-3" style={{ color: 'var(--gray-400)' }}>{VARIANT_LABELS[variant]}</p>
+          <p className="text-xs mb-3" style={{ color: 'var(--text-muted)' }}>{VARIANT_LABELS[variant]}</p>
           <div className="flex items-center gap-3 flex-wrap">
             {SIZES.map((size) => (
               <Button key={size} variant={variant} size={size}>

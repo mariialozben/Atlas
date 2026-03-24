@@ -11,7 +11,7 @@ export default function FormsDemo() {
       <div className="space-y-1">
         <label className="text-xs font-medium text-white">Text input</label>
         <Input placeholder="Enter text..." />
-        <p className="text-xs" style={{ color: 'var(--gray-400)' }}>Helper text below input</p>
+        <p className="text-xs" style={{ color: 'var(--text-muted)' }}>Helper text below input</p>
       </div>
 
       <div className="space-y-1">

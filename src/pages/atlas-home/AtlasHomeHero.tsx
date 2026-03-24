@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router'
 import { Button } from '@/components/ui/button'
-import AtlasLogo from '@/components/atlas-header/AtlasLogo'
 import { useLocale } from '@/hooks/use-locale'
 import AtlasHomeNav from './AtlasHomeNav'
 
@@ -13,25 +12,33 @@ export default function AtlasHomeHero() {
       data-el="home-hero"
       className="flex flex-col items-center gap-8 text-center"
     >
-      <div data-el="home-logo">
-        <AtlasLogo size="lg" showWordmark={true} />
-      </div>
+      <h1
+        data-el="home-wordmark"
+        style={{
+          fontFamily: '"Lato", sans-serif',
+          fontWeight: 700,
+          fontSize: '72px',
+          lineHeight: 1,
+          color: 'var(--color-platinum)',
+          letterSpacing: '-0.02em',
+        }}
+      >
+        Atlas
+      </h1>
 
       <p
         data-el="home-tagline"
-        className="max-w-[480px] text-lg leading-relaxed"
-        style={{ color: 'var(--gray-400)', fontSize: '17px' }}
+        className="max-w-[520px] leading-relaxed"
+        style={{ color: 'var(--text-muted)', fontSize: '17px' }}
       >
-        Minimalist design foundation that speaks two languages
-        {' '}and adapts to any digital vision.
-        {' '}<span className="block mt-1">{t('home.tagline')}</span>
+        {t('home.tagline_full')}
       </p>
 
       <Button
         data-el="home-cta"
         size="lg"
         onClick={() => navigate('/components')}
-        className="bg-blue-500 hover:bg-blue-700 text-white transition-colors"
+        className="bg-[var(--blue-500)] hover:bg-[var(--blue-500)] text-white transition-colors"
       >
         {t('home.cta')}
       </Button>
