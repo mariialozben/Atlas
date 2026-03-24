@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "home": "Home",
+    "foundations": "Foundations",
+    "components": "Components",
+    "layouts": "Layouts",
+    "tokens": "Tokens"
+  },
+  "home": {
+    "tagline": "One system, endless projects.",
+    "cta": "Explore the system →"
+  },
+  "actions": {
+    "close": "Close",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "common": {
+    "version": "v1.0.0"
+  }
+}
