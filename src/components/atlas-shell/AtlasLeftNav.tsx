@@ -31,7 +31,10 @@ function NavGroup({ item, onClose }: NavGroupProps) {
             : 'text-[var(--color-ash)] hover:text-[var(--color-platinum)] hover:bg-[rgba(191,191,191,0.10)]',
         )}
       >
-        <span>{t(item.labelKey)}</span>
+        <span className="flex items-center gap-2">
+          {item.icon && <item.icon size={16} stroke={1.5} style={{ color: 'var(--color-ash)', opacity: 0.6 }} />}
+          {t(item.labelKey)}
+        </span>
         {open ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
       </button>
       {open && (

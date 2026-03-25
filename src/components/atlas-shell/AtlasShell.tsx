@@ -16,7 +16,7 @@ export default function AtlasShell() {
       {/* Foreground content layer — glass tile floating above the background */}
       <div
         data-el="global-content"
-        className="pt-1 pl-0 md:pl-[220px] min-h-[100dvh] flex flex-col pr-1 pb-1"
+        className="pt-[calc(56px+8px)] md:pt-1 pl-0 md:pl-[220px] min-h-[100dvh] flex flex-col pr-1 pb-1 px-1 md:px-0 md:pr-1"
       >
         <div
           data-el="global-content-glass"
