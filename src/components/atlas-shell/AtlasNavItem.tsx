@@ -6,9 +6,10 @@ import { useLocale } from '@/hooks/use-locale'
 interface AtlasNavItemProps {
   item: NavItem
   depth?: number
+  onNavigate?: () => void
 }
 
-export default function AtlasNavItem({ item, depth = 0 }: AtlasNavItemProps) {
+export default function AtlasNavItem({ item, depth = 0, onNavigate }: AtlasNavItemProps) {
   const { t } = useLocale()
   const location = useLocation()
   const isActive = location.pathname === item.path ||
@@ -18,6 +19,7 @@ export default function AtlasNavItem({ item, depth = 0 }: AtlasNavItemProps) {
     <Link
       to={item.path}
       data-el={`global-nav-item-${item.key}`}
+      onClick={onNavigate}
       className={cn(
         'flex items-center text-sm transition-colors px-4 py-2 rounded-none',
         depth > 0 ? 'pl-8 text-xs' : '',

@@ -5,7 +5,7 @@ export default function Components() {
   const { t } = useLocale()
 
   return (
-    <main data-el="components-main" className="px-6 max-w-[1200px] mx-auto">
+    <main data-el="components-main" className="px-4 md:px-6 max-w-[1200px] mx-auto">
       <div data-el="components-hero" className="py-12">
         <h1 data-el="components-title" className="text-white mb-2">
           {t('nav.components')}

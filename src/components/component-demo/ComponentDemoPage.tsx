@@ -8,7 +8,7 @@ export default function ComponentDemoPage({ name, description, children }: Compo
   return (
     <main
       data-el={`comp-${name.toLowerCase().replace(/\s+/g, '-')}`}
-      className="px-8 py-10 max-w-[900px]"
+      className="px-4 py-6 md:px-8 md:py-10 max-w-[900px]"
     >
       <h1
         className="text-2xl font-bold mb-2"

@@ -5,7 +5,7 @@ export default function Foundations() {
   const { t } = useLocale()
 
   return (
-    <main data-el="foundations-main" className="px-6 max-w-[1200px] mx-auto">
+    <main data-el="foundations-main" className="px-4 md:px-6 max-w-[1200px] mx-auto">
       <div data-el="foundations-hero" className="py-12">
         <h1 data-el="foundations-title" className="text-white mb-2">
           {t('nav.foundations')}

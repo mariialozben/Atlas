@@ -1,19 +1,22 @@
+import { useState } from 'react'
 import { Outlet } from 'react-router'
 import AtlasTopBar from './AtlasTopBar'
 import AtlasLeftNav from './AtlasLeftNav'
 
 
 export default function AtlasShell() {
+  const [navOpen, setNavOpen] = useState(false)
+
   return (
     <div data-el="global-shell" className="min-h-[100dvh]" style={{ backgroundColor: '#222526' }}>
       {/* Background layer — top bar and sidebar sit here */}
-      <AtlasTopBar />
-      <AtlasLeftNav />
+      <AtlasTopBar onMenuToggle={() => setNavOpen((prev) => !prev)} />
+      <AtlasLeftNav open={navOpen} onClose={() => setNavOpen(false)} />
 
       {/* Foreground content layer — glass tile floating above the background */}
       <div
         data-el="global-content"
-        className="pt-1 pl-[220px] min-h-[100dvh] flex flex-col pr-1 pb-1"
+        className="pt-1 pl-0 md:pl-[220px] min-h-[100dvh] flex flex-col pr-1 pb-1"
       >
         <div
           data-el="global-content-glass"

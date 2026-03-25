@@ -7,7 +7,12 @@ import type { NavItem } from './types'
 import { useLocale } from '@/hooks/use-locale'
 import { cn } from '@/lib/utils'
 
-function NavGroup({ item }: { item: NavItem }) {
+interface NavGroupProps {
+  item: NavItem
+  onClose?: () => void
+}
+
+function NavGroup({ item, onClose }: NavGroupProps) {
   const { t } = useLocale()
   const location = useLocation()
   const isChildActive = item.children?.some(
@@ -32,7 +37,7 @@ function NavGroup({ item }: { item: NavItem }) {
       {open && (
         <div>
           {item.children?.map((child) => (
-            <AtlasNavItem key={child.key} item={child} depth={1} />
+            <AtlasNavItem key={child.key} item={child} depth={1} onNavigate={onClose} />
           ))}
         </div>
       )}
@@ -40,20 +45,40 @@ function NavGroup({ item }: { item: NavItem }) {
   )
 }
 
-export default function AtlasLeftNav() {
+interface AtlasLeftNavProps {
+  open?: boolean
+  onClose?: () => void
+}
+
+export default function AtlasLeftNav({ open, onClose }: AtlasLeftNavProps) {
   return (
-    <nav
-      data-el="global-leftnav"
-      className="fixed top-[56px] left-0 bottom-0 w-[220px] overflow-y-auto z-40 flex flex-col pt-4"
-      style={{ backgroundColor: 'transparent' }}
-    >
-      {NAV_ITEMS.map((item) =>
-        item.children ? (
-          <NavGroup key={item.key} item={item} />
-        ) : (
-          <AtlasNavItem key={item.key} item={item} />
-        )
+    <>
+      {/* Dark backdrop overlay — mobile only, visible when nav is open */}
+      {open && (
+        <div
+          data-el="global-leftnav-backdrop"
+          className="fixed inset-0 z-[39] md:hidden bg-black/50"
+          onClick={onClose}
+        />
       )}
-    </nav>
+
+      <nav
+        data-el="global-leftnav"
+        className={cn(
+          'fixed top-[56px] left-0 bottom-0 w-[220px] overflow-y-auto z-40 flex flex-col pt-4',
+          'hidden md:flex',
+          open && 'flex',
+        )}
+        style={{ backgroundColor: 'transparent' }}
+      >
+        {NAV_ITEMS.map((item) =>
+          item.children ? (
+            <NavGroup key={item.key} item={item} onClose={onClose} />
+          ) : (
+            <AtlasNavItem key={item.key} item={item} onNavigate={onClose} />
+          )
+        )}
+      </nav>
+    </>
   )
 }
