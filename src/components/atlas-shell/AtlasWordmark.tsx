@@ -1,3 +1,5 @@
+import { Link } from 'react-router'
+
 interface AtlasWordmarkProps {
   size?: 'sm' | 'md' | 'lg'
 }
@@ -5,12 +7,13 @@ interface AtlasWordmarkProps {
 export default function AtlasWordmark({ size = 'md' }: AtlasWordmarkProps) {
   const sizeClass = size === 'sm' ? 'text-lg' : size === 'lg' ? 'text-3xl' : 'text-xl'
   return (
-    <span
+    <Link
+      to="/"
       data-el="global-wordmark"
       className={`${sizeClass} font-bold tracking-tight`}
-      style={{ fontFamily: '"Lato", sans-serif', color: 'var(--color-platinum)' }}
+      style={{ fontFamily: '"Montserrat", sans-serif', color: 'var(--color-platinum)', textDecoration: 'none' }}
     >
       Atlas
-    </span>
+    </Link>
   )
 }

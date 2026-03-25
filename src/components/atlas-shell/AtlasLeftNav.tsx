@@ -45,7 +45,7 @@ export default function AtlasLeftNav() {
     <nav
       data-el="global-leftnav"
       className="fixed top-[56px] left-0 bottom-0 w-[220px] overflow-y-auto z-40 flex flex-col pt-4"
-      style={{ backgroundColor: 'var(--bg-elevated)', borderRight: '1px solid var(--border)' }}
+      style={{ backgroundColor: '#222526', borderRight: '1px solid var(--border)' }}
     >
       {NAV_ITEMS.map((item) =>
         item.children ? (

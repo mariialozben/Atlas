@@ -1,10 +1,7 @@
 import { useNavigate } from 'react-router'
 import { Button } from '@/components/ui/button'
-import { useLocale } from '@/hooks/use-locale'
-import AtlasHomeNav from './AtlasHomeNav'
 
 export default function AtlasHomeHero() {
-  const { t } = useLocale()
   const navigate = useNavigate()
 
   return (
@@ -15,7 +12,7 @@ export default function AtlasHomeHero() {
       <h1
         data-el="home-wordmark"
         style={{
-          fontFamily: '"Lato", sans-serif',
+          fontFamily: '"Montserrat", sans-serif',
           fontWeight: 700,
           fontSize: '72px',
           lineHeight: 1,
@@ -31,7 +28,7 @@ export default function AtlasHomeHero() {
         className="max-w-[520px] leading-relaxed"
         style={{ color: 'var(--text-muted)', fontSize: '17px' }}
       >
-        {t('home.tagline_full')}
+        A minimalist design system built for speed and clarity
       </p>
 
       <Button
@@ -40,10 +37,8 @@ export default function AtlasHomeHero() {
         onClick={() => navigate('/components')}
         className="bg-[var(--blue-500)] hover:bg-[var(--blue-500)] text-white transition-colors"
       >
-        {t('home.cta')}
+        Explore the System
       </Button>
-
-      <AtlasHomeNav />
     </div>
   )
 }

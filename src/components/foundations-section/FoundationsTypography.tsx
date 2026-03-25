@@ -10,22 +10,20 @@ const TYPE_SPECIMENS = [
 ]
 
 const RULES = [
-  'Headings use Lato Bold 700 — covers Latin + Cyrillic (Ukrainian)',
-  'Body copy uses Merriweather for long-form readability',
-  'UI elements (buttons, labels, nav) use Lato — clean and neutral',
-  'Code and tokens use JetBrains Mono',
+  'All text uses Montserrat — headings, body, UI elements, and labels',
+  'Headings use Montserrat SemiBold 600',
+  'Body copy uses Montserrat Regular 400',
+  'UI elements (buttons, labels, nav) use Montserrat Medium 500',
   'Never use font sizes below 12px',
   'Sentence case always — no ALL CAPS in UI',
   'Two weights only in components: 400 regular, 500 medium (600 reserved for headings)',
 ]
 
-const isHeadingWeight = (weight: number) => weight >= 600
-
 export default function FoundationsTypography() {
   return (
     <div data-el="foundations-typography" className="space-y-8">
       <section>
-        <h3 className="text-sm font-medium text-white mb-4">Type scale — Lato / Merriweather</h3>
+        <h3 className="text-sm font-medium text-white mb-4">Type scale — Montserrat</h3>
         <div className="space-y-1">
           {TYPE_SPECIMENS.map(({ label, size, weight, use }) => (
             <div key={label} className="flex items-baseline gap-4 py-2 border-b border-white/5 last:border-0">
@@ -38,12 +36,10 @@ export default function FoundationsTypography() {
                   fontSize: size,
                   fontWeight: weight,
                   lineHeight: 1.2,
-                  fontFamily: isHeadingWeight(weight)
-                    ? '"Lato", sans-serif'
-                    : '"Merriweather", serif',
+                  fontFamily: '"Montserrat", sans-serif',
                 }}
               >
-                {isHeadingWeight(weight) ? 'Lato Bold' : 'Merriweather'}
+                Montserrat
               </span>
               <span className="text-xs flex-shrink-0 hidden sm:block" style={{ color: 'var(--text-muted)' }}>
                 {use}
