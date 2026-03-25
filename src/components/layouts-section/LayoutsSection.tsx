@@ -4,6 +4,7 @@ import ListViewTemplate from './templates/ListViewTemplate'
 import TableViewTemplate from './templates/TableViewTemplate'
 import DashboardTemplate from './templates/DashboardTemplate'
 import ModalDetailTemplate from './templates/ModalDetailTemplate'
+import FullscreenPreview from './FullscreenPreview'
 
 export default function LayoutsSection() {
   return (
@@ -16,11 +17,21 @@ export default function LayoutsSection() {
           <TabsTrigger value="dashboard">Dashboard</TabsTrigger>
           <TabsTrigger value="modal">Modal / Detail</TabsTrigger>
         </TabsList>
-        <TabsContent value="project-home"><ProjectHomeTemplate /></TabsContent>
-        <TabsContent value="list"><ListViewTemplate /></TabsContent>
-        <TabsContent value="table"><TableViewTemplate /></TabsContent>
-        <TabsContent value="dashboard"><DashboardTemplate /></TabsContent>
-        <TabsContent value="modal"><ModalDetailTemplate /></TabsContent>
+        <TabsContent value="project-home">
+          <FullscreenPreview label="Project Home"><ProjectHomeTemplate /></FullscreenPreview>
+        </TabsContent>
+        <TabsContent value="list">
+          <FullscreenPreview label="List View"><ListViewTemplate /></FullscreenPreview>
+        </TabsContent>
+        <TabsContent value="table">
+          <FullscreenPreview label="Table View"><TableViewTemplate /></FullscreenPreview>
+        </TabsContent>
+        <TabsContent value="dashboard">
+          <FullscreenPreview label="Dashboard"><DashboardTemplate /></FullscreenPreview>
+        </TabsContent>
+        <TabsContent value="modal">
+          <FullscreenPreview label="Modal / Detail"><ModalDetailTemplate /></FullscreenPreview>
+        </TabsContent>
       </Tabs>
     </div>
   )

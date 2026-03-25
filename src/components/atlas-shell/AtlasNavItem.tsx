@@ -26,7 +26,8 @@ export default function AtlasNavItem({ item, depth = 0 }: AtlasNavItemProps) {
           : 'text-[var(--color-ash)] hover:text-[var(--color-platinum)] hover:bg-[rgba(191,191,191,0.10)]',
       )}
       style={isActive ? {
-        borderLeft: '3px solid var(--color-ash)',
+        borderLeft: '3px solid #007bff',
+        fontWeight: 700,
         background: 'rgba(191,191,191,0.12)',
         paddingLeft: depth > 0 ? '29px' : '13px',
       } : {}}

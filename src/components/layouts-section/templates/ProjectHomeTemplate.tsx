@@ -6,7 +6,7 @@ export default function ProjectHomeTemplate() {
   return (
     <div data-el="template-project-home" className="overflow-y-auto h-[500px] rounded-lg border border-white/10" style={{ backgroundColor: 'var(--bg-page)' }}>
       {/* Header */}
-      <header className="sticky top-0 z-10 flex items-center justify-between px-6 h-12 border-b border-white/10" style={{ backgroundColor: 'var(--bg-page)' }}>
+      <header className="sticky top-0 z-[5] flex items-center justify-between px-6 h-12 border-b border-white/10" style={{ backgroundColor: 'var(--bg-page)' }}>
         <span className="text-sm font-medium text-white">MyProject</span>
         <nav className="flex gap-4">
           {['Home', 'About', 'Docs'].map((l) => <a key={l} href="#" className="text-xs" style={{ color: 'var(--text-muted)' }}>{l}</a>)}

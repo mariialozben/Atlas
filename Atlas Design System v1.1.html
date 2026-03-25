@@ -1,0 +1,499 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.doc{font-family:var(--font-mono);font-size:12px;line-height:1.8;color:var(--color-text-primary);background:var(--color-background-secondary);border-radius:var(--border-radius-lg);border:0.5px solid var(--color-border-tertiary);overflow:hidden}
+.doc-bar{padding:14px 20px;border-bottom:0.5px solid var(--color-border-tertiary);display:flex;align-items:center;gap:10px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--color-border-secondary);display:inline-block;margin-right:3px}
+.fname{font-size:12px;color:var(--color-text-secondary);font-family:var(--font-mono)}
+.pre{padding:20px 24px;overflow-y:auto;max-height:600px;font-family:var(--font-mono);font-size:11.5px;line-height:1.85;color:var(--color-text-primary);white-space:pre-wrap;word-break:break-word}
+</style>
+<div class="doc">
+<div class="doc-bar">
+  <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+  <span class="fname">ATLAS_DESIGN_SYSTEM_v1.1.md</span>
+</div>
+<div class="pre"># Atlas Design System
+# v1.1.0
+
+> "Minimalist design foundation that speaks two languages
+>  and adapts to any digital vision.
+>  One system, endless projects."
+
+Version:           1.1.0
+Status:            Active — in development
+Supported locales: English (EN) · Ukrainian (UA)
+Theme:             Dark-first (#1A1A1A base) · Light mode supported
+
+---
+
+## 0. Brand
+
+### Name
+Atlas
+
+### Logo
+- Text: "Atlas"
+- Font: Lato Bold
+- Colour: #E0E0E0 (Platinum)
+- No icon/mark — wordmark only
+- Minimum size: 18px rendered height
+- Clear space: 8px on all sides
+- Never recolour, never italicise
+
+### Tagline
+"Minimalist design foundation that speaks two languages
+ and adapts to any digital vision.
+ One system, endless projects."
+
+Ukrainian:
+"Мінімалістична дизайн-система, що говорить двома мовами
+ і адаптується до будь-якого цифрового проєкту.
+ Одна система — нескінченні проєкти."
+
+### Voice
+- Clear and precise — no jargon
+- Equally natural in English and Ukrainian
+- Confident but never loud
+
+---
+
+## 1. Colour Palette
+
+All named colours taken directly from the approved swatch.
+Named tokens use Atlas colour names.
+
+Token              Name        Hex        Use
+--color-jet-black  Jet Black   #1A1A1A    Page background (primary bg)
+--color-onyx       Onyx        #222526    Surface bg (cards, panels)
+--color-graphite   Graphite    #353A3E    Elevated surface, nav bg
+--color-ash        Ash         #BFBFBF    Highlights, hover states,
+                                          muted icons, dividers
+--color-platinum   Platinum    #E0E0E0    Primary text, logo, headings
+
+### Semantic / accent colours
+--color-blue-500   —           #2E7DD6    Primary actions, CTAs, links
+--color-blue-300   —           #60A8E8    Secondary, inactive states
+--color-blue-50    —           #E8F4FE    Focus tint, hover bg on light
+--color-success    —           #1D9E75    Confirmations, saved states
+--color-warning    —           #EF9F27    Alerts, attention
+--color-danger     —           #E24B4A    Errors, destructive actions
+
+### Highlight rule
+Highlights (hover backgrounds, active indicators, selected
+states, focus rings) use --color-ash (#BFBFBF) at reduced
+opacity (10–20%) on dark surfaces, or as a full-opacity
+border/accent stroke on interactive elements.
+
+### Contrast guidance
+- --color-platinum on --color-jet-black: passes AAA (≥7:1)
+- --color-platinum on --color-onyx: passes AAA
+- --color-platinum on --color-graphite: passes AA (≥4.5:1)
+- --color-ash on --color-jet-black: passes AA
+- Blue-500 on --color-jet-black: passes AA for large text
+
+---
+
+## 2. Typography
+
+### Fonts (Google Fonts, free, open licence)
+
+Headers: Lato Bold (weight 700)
+  Script: Latin + Cyrillic (Ukrainian supported)
+  Import: fonts.googleapis.com/css2?family=Lato:wght@700
+
+Body text: Merriweather Regular (weight 400) + Bold (700)
+  Script: Latin + Cyrillic
+  Import: fonts.googleapis.com/css2?family=Merriweather:wght@400;700
+
+Mono (optional, data tables / code blocks):
+  JetBrains Mono 400
+  Import: fonts.googleapis.com/css2?family=JetBrains+Mono
+
+### Type scale
+
+Token        Size   Font          Weight  Line-h  Use
+--text-xs    12px   Merriweather  400     1.5     Captions, labels, badges
+--text-sm    14px   Merriweather  400     1.6     Secondary body, hints
+--text-base  16px   Merriweather  400     1.7     Body copy
+--text-lg    18px   Lato          700     1.5     Sub-headings
+--text-xl    22px   Lato          700     1.3     Section headings
+--text-2xl   28px   Lato          700     1.2     Page titles
+--text-3xl   36px   Lato          700     1.1     Hero headings
+--text-hero  48px   Lato          700     1.0     Main screen wordmark
+
+### Rules
+- Lato Bold for all headings (h1–h4) and navigation labels
+- Merriweather for all body copy, descriptions, table content
+- Sentence case always — no ALL CAPS in UI
+- Minimum rendered font size: 12px
+
+---
+
+## 3. Spacing & Layout
+
+Spacing scale (4px base):
+4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96px
+
+Border radius:
+--radius-sm    4px      Tags, badges, chips
+--radius-md    8px      Buttons, inputs, tooltips, sliders
+--radius-lg    12px     Cards, panels, dropdowns
+--radius-xl    20px     Modals, wizard panels
+--radius-full  9999px   Pills, avatars, spinners
+
+Shadows (dark surfaces):
+--shadow-sm    0 1px 3px  rgba(0,0,0,0.5)
+--shadow-md    0 4px 12px rgba(0,0,0,0.6)
+--shadow-lg    0 8px 24px rgba(0,0,0,0.7)
+
+Max content width: 1200px centred
+
+---
+
+## 4. Website Structure & Navigation
+
+### Overall layout
+The Atlas design system is presented as a multi-page
+single-page application with a persistent shell:
+
++--------------------------------------------------+
+| Header bar: Logo (left) · Lang switcher (right)  |
++----------------+---------------------------------+
+| Left nav panel | Page content area               |
+| (fixed)        | (scrollable)                    |
+|                |                                 |
++----------------+---------------------------------+
+
+### 4.1 Main screen (entry / home)
+The first screen a user sees. Full content area centred.
+
+Layout:
+- Logo top-left in header bar
+- Left navigation panel visible but sections listed,
+  "Main" item active
+- Centre content:
+    Large "Atlas" wordmark (Lato Bold, 48px, #E0E0E0)
+    Tagline beneath (Merriweather, 17px, #BFBFBF,
+    max-width 480px, centred)
+    Primary CTA button: "Explore the system →"
+    EN/UA switcher top-right corner of header
+- Background: #1A1A1A (Jet Black)
+- Subtle decorative detail optional (slow-pulse
+  #BFBFBF accent line — never distracting)
+
+Bilingual strings:
+  en: "Explore the system →"
+  uk: "Дослідити систему →"
+
+### 4.2 Left navigation panel
+- Background: --color-graphite (#353A3E)
+- Width: 220px (desktop), collapsible to 48px (icon-only)
+- Logo visible at top of panel on mobile collapse
+- Nav items use Lato Bold 14px, #E0E0E0
+- Active item: left 3px border #BFBFBF + bg highlight
+- Hover: bg rgba(191,191,191,0.10)
+- Sections listed (each is a separate page/view):
+
+  — Main            (entry screen)
+  — Foundations     (colours, type, spacing, tokens)
+  — Button
+  — Card
+  — Chips & Tags
+  — Data Table
+  — Form
+  — Header
+  — Footer
+  — Navigation Panel
+  — Progress Bar
+  — Spinner
+  — Rich Text Editor
+  — Segment Control
+  — Slider
+  — Tooltip
+  — Upload Area
+  — User Profile
+  — Wizard
+
+### 4.3 Header bar
+- Background: --color-onyx (#222526)
+- Height: 56px
+- Left: Atlas logo (Lato Bold, #E0E0E0)
+- Right: Language switcher [EN] [UA]
+- Bottom border: 1px --color-graphite
+- Sticky / fixed at top
+
+### 4.4 Foundations page
+Dedicated page covering all base tokens and rules:
+- Colour palette swatches (all 5 named colours + semantic)
+- Typography specimens (Lato headers + Merriweather body)
+- Spacing scale visual ruler
+- Border radius examples
+- Shadow examples
+- Iconography guidelines (if applicable)
+
+---
+
+## 5. Components
+
+Each component is a separate page in the left nav.
+Every component page includes:
+  1. Live interactive example
+  2. Variants / states documented
+  3. Usage guidelines
+  4. Bilingual label examples (EN + UA)
+
+### 5.1 Button
+Variants: Primary · Secondary · Ghost · Danger
+Sizes: sm (32px) · md (40px) · lg (48px)
+States: default · hover · active · disabled · loading
+Radius: --radius-md
+Primary: bg #2E7DD6, text #E0E0E0
+Hover highlight: bg darkens, border #BFBFBF
+
+### 5.2 Card
+Variants: default · media (image top) · compact · stat
+Background: --color-onyx (#222526)
+Border: 0.5px --color-graphite
+Radius: --radius-lg
+Hover: slight translateY(-2px), border #BFBFBF
+Padding: 20px (default), 12px (compact)
+
+### 5.3 Chips & Tags
+Radius: --radius-full (pill)
+Sizes: sm · md
+Variants: neutral · info · success · warning · danger
+          + removable (× icon) · selectable (toggle)
+Background: --color-graphite base
+Active/selected: border #BFBFBF + text #E0E0E0
+
+### 5.4 Data Table
+Columns: sortable headers (↑ ↓)
+Rows: hover bg rgba(191,191,191,0.07)
+      + checkbox select
+Header row: bg --color-graphite, Lato Bold 13px, #BFBFBF
+Body rows: bg --color-onyx, Merriweather 13px, #E0E0E0
+Border: 0.5px --color-graphite between rows
+Toolbar: search input + filter dropdown + bulk actions
+Pagination: prev/next + page indicator
+Responsive: horizontal scroll on ≤768px
+
+### 5.5 Form
+States documented:
+  Empty:    placeholder text #BFBFBF, border --color-graphite
+  Focused:  border #2E7DD6, ring rgba(46,125,214,0.2)
+  Filled:   border --color-ash, text #E0E0E0
+  Error:    border #E24B4A, error message below in red
+  Disabled: 40% opacity, cursor not-allowed
+
+Field types: text · email · password · number · textarea
+             · select/dropdown · checkbox · radio
+Label: Lato Bold 13px above input
+Helper / error text: Merriweather 12px below input
+Radius: --radius-md
+
+### 5.6 Header (component)
+See Section 4.3 for the Atlas shell header spec.
+Component page documents: variants (transparent · solid),
+responsive behaviour, slot customisation.
+
+### 5.7 Footer
+Background: --color-onyx (#222526)
+Top border: 1px --color-graphite
+Content: logo left · nav links centre · lang switcher right
+         · version badge · copyright
+Text: Merriweather 13px, #BFBFBF
+Links: hover colour #E0E0E0
+
+### 5.8 Navigation Panel
+Documents the left nav component in isolation.
+Variants:
+  Left panel: 220px fixed · collapsible to 48px icon-only
+  Top bar: horizontal nav alternative
+States: default · hover · active · collapsed
+Background: --color-graphite (#353A3E)
+Active indicator: 3px left border #BFBFBF
+
+### 5.9 Progress Bar
+Variants: determinate · indeterminate
+Track: bg --color-graphite, radius --radius-full, height 6px
+Fill: bg #2E7DD6 (or semantic colour for status contexts)
+Label: percentage text right-aligned, Merriweather 12px #BFBFBF
+Animated fill transition: 300ms ease
+
+### 5.10 Spinner
+Variants: sm (16px) · md (24px) · lg (40px)
+Style: circular stroke, 2px weight
+Colour: #BFBFBF (default) · #2E7DD6 (on primary bg)
+Animation: rotate 700ms linear infinite
+Use: inside buttons (loading state), page-level loading
+
+### 5.11 Rich Text Editor
+Toolbar: bg --color-graphite, icon buttons 32px
+  Tools: Bold · Italic · Underline · | · H1 H2 · |
+         Ordered list · Unordered list · | · Link · Quote
+Editor area: bg --color-onyx, border --color-graphite,
+  radius --radius-lg, Merriweather 15px, #E0E0E0
+  min-height: 200px, padding 16px
+Placeholder: #BFBFBF
+Active toolbar button: bg rgba(191,191,191,0.15),
+  border-bottom 2px #BFBFBF
+
+### 5.12 Segment Control
+A grouped button selector (tabs-style, inline)
+Container: bg --color-graphite, radius --radius-md, padding 3px
+Segment: Lato Bold 13px, height 32px, padding 0 16px
+Inactive: text #BFBFBF, transparent bg
+Active: bg --color-onyx, text #E0E0E0, radius --radius-md
+Hover (inactive): text #E0E0E0
+All segment labels i18n-aware
+
+### 5.13 Slider
+Track: height 4px, bg --color-graphite, radius --radius-full
+Fill (left of thumb): bg #2E7DD6
+Thumb: 18px circle, bg #E0E0E0, border 2px #2E7DD6
+  Hover: border #BFBFBF, slight scale(1.1)
+Value tooltip: appears above thumb on drag
+  bg --color-graphite, Merriweather 12px
+
+### 5.14 Tooltip
+Trigger: hover or focus on target element
+Panel: bg --color-graphite (#353A3E), radius --radius-md
+  border: 0.5px --color-ash, max-width 220px
+  Merriweather 12px, #E0E0E0, padding 8px 12px
+Arrow: 6px, same bg as panel
+Positions: top (default) · bottom · left · right
+  Auto-flip if near viewport edge
+Delay: 300ms show, 100ms hide
+
+### 5.15 Upload Area
+States:
+  Default: dashed border 1.5px --color-graphite,
+    bg --color-onyx, radius --radius-lg
+    Icon (upload arrow) + label + sub-label (file types)
+  Drag-over: border #BFBFBF solid 1.5px,
+    bg rgba(191,191,191,0.05)
+  Uploading: progress bar inside area + spinner
+  Success: border --color-success, success icon + filename
+  Error: border --color-danger, error message
+Labels: Lato Bold 14px (main), Merriweather 12px (sub)
+All labels i18n-aware
+
+### 5.16 User Profile
+Variants:
+  Avatar + name inline (nav / header use)
+  Profile card (expanded: avatar, name, role, actions)
+Avatar: circle, --radius-full
+  Image: cover fill | Initials fallback: Lato Bold 16px,
+  bg --color-graphite, text #E0E0E0
+Name: Lato Bold 15px, #E0E0E0
+Role / meta: Merriweather 13px, #BFBFBF
+Actions: Edit profile · Sign out (Ghost buttons)
+
+### 5.17 Wizard
+A multi-step guided flow
+Step indicator: horizontal stepper at top
+  Completed: filled circle #2E7DD6 + #BFBFBF connector line
+  Active: filled circle #E0E0E0 + label bold
+  Upcoming: outline circle --color-graphite + label #BFBFBF
+Content panel: bg --color-onyx, radius --radius-xl, padding 32px
+  Lato Bold heading + Merriweather body
+Footer: Back (Secondary btn, left) · Next / Finish (Primary, right)
+  Step counter: "Step 2 of 4" Merriweather 13px #BFBFBF centred
+All step labels and content i18n-aware
+
+---
+
+## 6. Internationalisation (i18n)
+
+Strategy: JSON locale files, lightweight context/store.
+Files: /locales/en.json · /locales/uk.json
+
+On load: read localStorage key "atlas-locale"
+         default to 'en' if absent
+On toggle: update context, re-render, save to localStorage
+
+All component labels, placeholders, error messages,
+button text, and nav items must have EN + UA entries.
+
+"Atlas" (brand name) is never translated.
+
+---
+
+## 7. Theming
+
+### Dark mode (primary — all pages default to this)
+--bg-page:        #1A1A1A   (Jet Black)
+--bg-surface:     #222526   (Onyx)
+--bg-elevated:    #353A3E   (Graphite)
+--text-primary:   #E0E0E0   (Platinum)
+--text-muted:     #BFBFBF   (Ash)
+--highlight:      #BFBFBF   (Ash — borders, accents, hovers)
+--border:         #353A3E   (Graphite)
+
+### Light mode (secondary)
+--bg-page:        #F5F5F4
+--bg-surface:     #FFFFFF
+--bg-elevated:    #EDEDEB
+--text-primary:   #1A1A1A
+--text-muted:     #5F5E5A
+--highlight:      #353A3E
+--border:         rgba(0,0,0,0.10)
+
+---
+
+## 8. Usage Guidelines
+
+- Always use named tokens — never raw hex values in components
+- Background of every page: --bg-page (#1A1A1A)
+- Logo: always Lato Bold, always #E0E0E0 — never altered
+- Highlights and hover states: always #BFBFBF (Ash)
+- Primary interactive colour: #2E7DD6 (blue-500)
+- Maintain min 4.5:1 contrast for all body text
+- Lang switcher must appear on every screen
+- All user-facing strings must have EN + UA entries
+- Modals and wizards must trap focus; Escape to dismiss
+- Main screen is always the entry point — loads before
+  any component or foundations page
+
+---
+
+## 9. File Structure
+
+/atlas
+  /locales
+    en.json
+    uk.json
+  /tokens
+    colors.css         ← Jet Black, Onyx, Graphite, Ash, Platinum
+    typography.css     ← Lato + Merriweather scale
+    spacing.css
+  /components
+    Button/
+    Card/
+    ChipTag/
+    DataTable/
+    Form/
+    Header/
+    Footer/
+    NavPanel/
+    ProgressBar/
+    Spinner/
+    RichTextEditor/
+    SegmentControl/
+    Slider/
+    Tooltip/
+    UploadArea/
+    UserProfile/
+    Wizard/
+    LanguageSwitcher/
+  /pages
+    MainScreen/        ← entry screen
+    Foundations/
+    [one folder per component page]
+  index.css            ← token definitions + reset
+  README.md
+
+---
+
+Atlas · v1.1.0 · One system, endless projects.</div>
+</div>
